@@ -123,18 +123,18 @@ void PreviewWalking::initialize(double lipm_height_m, double preview_time_sec, d
   // leg_angle_feed_back_[9].p_gain_ = 0.1;
 
 
-  // op3 position
-  // hip roll
-  leg_angle_feed_back_[1].p_gain_ = 0.2; // 0.2
-  leg_angle_feed_back_[7].p_gain_ = 0.2;
+  // // op3 position
+  // // hip roll
+  // leg_angle_feed_back_[1].p_gain_ = 0.2; // 0.2
+  // leg_angle_feed_back_[7].p_gain_ = 0.2;
 
-  // hip pitch
-  leg_angle_feed_back_[2].p_gain_ = 0.2;
-  leg_angle_feed_back_[8].p_gain_ = 0.2;
+  // // hip pitch
+  // leg_angle_feed_back_[2].p_gain_ = 0.2;
+  // leg_angle_feed_back_[8].p_gain_ = 0.2;
 
-  // knee 
-  leg_angle_feed_back_[3].p_gain_ = 0.5;
-  leg_angle_feed_back_[9].p_gain_ = 0.5;
+  // // knee 
+  // leg_angle_feed_back_[3].p_gain_ = 0.5;
+  // leg_angle_feed_back_[9].p_gain_ = 0.5;
 
   mat_g_to_acc_.resize(4, 1);
   mat_g_to_acc_.fill(0);
@@ -346,7 +346,7 @@ void PreviewWalking::process()
   }
 
   // gyro feedback: direction * internal gain * balance gain * gyro_errr (0 - gyro) 
-  double internal_gain = 0.025*1.0;
+  double internal_gain = 0.025*0.0;
   double roll_gyro_err  = 0.0 - current_gyro_roll_rad_per_sec_;
   double pitch_gyro_err = 0.0 - current_gyro_pitch_rad_per_sec_;
   
